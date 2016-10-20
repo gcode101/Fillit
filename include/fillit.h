@@ -32,4 +32,5 @@ int				minos_count(char *str);
 char			*mapit(char *str);
 char			**split_minos(char *str);
 char			*solver(char *str, char *map);
+char			*ft_concat(char *s1, char *s2);
 #endif

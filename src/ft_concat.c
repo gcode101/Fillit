@@ -1,40 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rdfile.c                                        :+:      :+:    :+:   */
+/*   ft_concat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcortina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/10/09 20:59:07 by gcortina          #+#    #+#             */
-/*   Updated: 2016/10/20 15:44:15 by gcortina         ###   ########.fr       */
+/*   Created: 2016/08/28 16:02:56 by gcortina          #+#    #+#             */
+/*   Updated: 2016/10/09 21:28:18 by gcortina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-char	*ft_rdfile(char *file)
+char	*ft_concat(char *s1, char *s2)
 {
-	int			fd;
-	int			ret;
-	char		buf[BUF_SIZE + 1];
-	char		*str;
+	char *result;
 
-	str = malloc(sizeof(char) * 1);
-	if (!str)
-		return (NULL);
-	fd = open(file, O_RDONLY);
-	if (fd >= 0)
+	result = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	if (result)
 	{
-		while ((ret = read(fd, buf, BUF_SIZE)))
-		{
-			buf[ret] = '\0';
-			str = ft_concat(str, buf);
-		}
-		if (!ft_strlen(str))
-			ft_putendl_fd("Empty file", 2);
+		ft_strcpy(result, s1);
+		ft_strcat(result, s2);
 	}
-	else
-		ft_putendl_fd("File not found", 2);
-	close(fd);
-	return (str);
+	return (result);
 }
