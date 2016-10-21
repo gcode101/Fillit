@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "fillit.h"
+#include <stdio.h>
 
 static int 	erase(char *map, char c)
 {

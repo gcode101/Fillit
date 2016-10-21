@@ -24,13 +24,15 @@ char	**split_minos(char *str)
 	int		i;
 	int		j;
 	int		k;
+	int		count;
 	char	**minos;
 
 	i = 0;
 	k = 0;
-	if (!(minos = (char**)malloc(sizeof(char*) * (minos_count(str)) + 1)))
+	count = minos_count(str);
+	if (!(minos = (char**)malloc(sizeof(char*) * (count) + 1)))
 		return (NULL);
-	while (str[i])
+	while (k < count)
 	{
 		if (!(minos[k] = malloc(sizeof(char) * (TETRIMINO) + 1)))
 			return (NULL);
