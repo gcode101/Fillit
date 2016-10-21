@@ -96,4 +96,6 @@ void				btree_apply_suffix(t_btree *root, void (*applyf)(void *));
 t_btree				*btree_create_node(void *item);
 void				*btree_search_infix(t_btree *root, void *data_ref,
 											int (*applyf)(void *, void *));
+char				*ft_trimfront(char *str, char c);
+char				*ft_trimend(char *str, char c);
 #endif

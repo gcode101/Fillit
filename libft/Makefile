@@ -6,7 +6,7 @@
 #    By: gcortina <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/10/21 09:58:24 by gcortina          #+#    #+#              #
-#    Updated: 2016/10/21 10:04:09 by gcortina         ###   ########.fr        #
+#    Updated: 2016/10/21 10:46:43 by gcortina         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ SRC = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c ft_memchr.c f
 	ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_putchar.c ft_putstr.c ft_itoa.c ft_striter.c ft_striteri.c ft_strmap.c \
 	ft_strmapi.c ft_strequ.c ft_strnequ.c ft_strsub.c ft_strjoin.c ft_strtrim.c ft_strsplit.c ft_lstnew.c ft_lstdelone.c \
 	ft_lstdel.c ft_lstadd.c ft_lstiter.c ft_lstmap.c btree_apply_infix.c btree_apply_prefix.c btree_apply_suffix.c \
-	btree_create_node.c btree_search_item.c
+	btree_create_node.c btree_search_item.c ft_trimfront.c ft_trimend.c
 
 OBJ_NAME = $(SRC:.c=.o)
 
