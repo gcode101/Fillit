@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   need_space.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcortina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/10/09 12:20:47 by gcortina          #+#    #+#             */
-/*   Updated: 2016/10/09 16:09:08 by gcortina         ###   ########.fr       */
+/*   Created: 2016/10/21 15:05:35 by gcortina          #+#    #+#             */
+/*   Updated: 2016/10/21 15:05:36 by gcortina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int		main(int argc, char **argv)
+bool	need_space(char *str, int count)
 {
-	char	*str;
-	char	*map;
-	int		times;
+	int		pieces;
+	int		i;
 
-	times = 0;
-	if (argc != 2)
+	i = 0;
+	pieces = count * 4;
+	while (str[i])
 	{
-		ft_putendl("usage: ./fillit [filename]");
-		return (0);
+		if (str[i] != '.' && str[i] != '\n')
+			pieces--;
+		i++;
 	}
-	str = ft_rdfile(argv[1]);
-	if (ft_valid(str))
-	{
-		map = mapit(str, FALSE, times);
-		ft_putendl(solver(str, map, times));
-	}
-	else
-		ft_putendl("not valid");
-	return (0);
+	if (pieces)
+		return (TRUE);
+	return (FALSE);
 }

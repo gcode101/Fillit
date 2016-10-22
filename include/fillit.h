@@ -29,8 +29,9 @@ char			*ft_rdfile(char *file);
 bool			ft_valid(char *str);
 char 			*fetch_mino(int nb);
 int				minos_count(char *str);
-char			*mapit(char *str);
+char			*mapit(char *str, bool more_space, int times);
 char			**split_minos(char *str);
-char			*solver(char *str, char *map);
+char			*solver(char *str, char *map, int times);
 char			*ft_concat(char *s1, char *s2);
+bool			need_space(char *str, int count);
 #endif

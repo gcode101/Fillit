@@ -27,15 +27,19 @@ static int	square_root(int n)
 	return (x);
 }
 
-static int	get_space(char *str)
+static int	get_space(char *str, bool more_space, int times)
 {
 	int		pieces_num;
 	int		perfect_sq;
 	int		i;
+	int		count;
 
 	i = 4;
 	perfect_sq = 16;
-	pieces_num = minos_count(str) * 4;
+	count = minos_count(str);
+	if (more_space)
+		count += times;
+	pieces_num = count * 4;
 	while (perfect_sq < pieces_num)
 	{
 		perfect_sq = i;
@@ -46,7 +50,7 @@ static int	get_space(char *str)
 	return (perfect_sq + (i - 1));
 }
 
-char		*mapit(char *str)
+char		*mapit(char *str, bool more_space, int times)
 {
 	char	*map;
 	int		map_size;
@@ -56,7 +60,7 @@ char		*mapit(char *str)
 
 	i = 0;
 	j = 0;
-	map_size = get_space(str);
+	map_size = get_space(str, more_space, times);
 	row_len = square_root(map_size);
 	if (!(map = malloc(sizeof(char) * (map_size) + 1)))
 		return (NULL);
