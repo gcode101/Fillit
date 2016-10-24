@@ -99,7 +99,7 @@ static bool	insert(char *mino, char *map, int pos, char c)
 			{
 				map[pos] = c;
 				// if (c == 'C' || c == 'D')
-					// printf("%c inserted here: %d\n", c, pos);		
+					// printf("%c inserted here: %d\n", c, pos);
 				pos += next_piece(mino, map, i + 1);
 				// printf("pos: %d\n", pos);
 				blocks++;
@@ -108,7 +108,7 @@ static bool	insert(char *mino, char *map, int pos, char c)
 			{
 				// if (c == 'C' || c == 'D')
 				// {
-				// 	printf("pos where %c fails: %d\n", c, pos);
+					// printf("pos where %c fails: %d\n", c, pos);
 				// }
 				erase(map, c);
 				return (FALSE);
@@ -133,7 +133,7 @@ char		*solver(char *str, char *map, int times)
 
 	i = 0;
 	start = 0;
-	end = 19;
+	end = ft_strlen(map);
 	c = 'A';
 	count = minos_count(str);
 	minos = split_minos(str);
@@ -151,6 +151,9 @@ char		*solver(char *str, char *map, int times)
 		else
 		{
 			i--;
+			if (i == -1)
+				break;
+			printf("i: %d\n", i);
 			start = erase(map, --c); //erase deletes all c characters and returns the position + 1 of the first one it found
 			// printf("start: %d char: %c\n", start, c);
 		}
