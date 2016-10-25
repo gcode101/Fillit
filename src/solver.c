@@ -137,6 +137,7 @@ char		*solver(char *str, char *map, int times)
 	c = 'A';
 	count = minos_count(str);
 	minos = split_minos(str);
+	ft_putendl("Waiting for reply....");
 	while (minos[i])
 	{
 		if (insert(minos[i], map, start, c))
@@ -153,7 +154,7 @@ char		*solver(char *str, char *map, int times)
 			i--;
 			if (i == -1)
 				break;
-			printf("i: %d\n", i);
+			// printf("i: %d\n", i);
 			start = erase(map, --c); //erase deletes all c characters and returns the position + 1 of the first one it found
 			// printf("start: %d char: %c\n", start, c);
 		}
@@ -163,9 +164,10 @@ char		*solver(char *str, char *map, int times)
 		times++;
 		ft_memdel((void**)&map);
 		map = mapit(str, TRUE, times);
-		// printf("*****************got a new map bro*******************\n");
+		// printf("*****************got a new map bro*******************\n"); 
 		// printf("times: %d\n", times);
 		map = solver(str, map, times);
 	}
+	ft_putendl("Done");
 	return (map);
 }

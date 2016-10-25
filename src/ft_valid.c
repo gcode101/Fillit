@@ -69,25 +69,23 @@ bool			ft_valid(char *str)
 	int		i;
 	int		col;
 	int		row;
-	int		minos_total;
-	char	*mino;
+	char	**minos;
+	int		index;
 
 	i = 0;
 	col = 0;
 	row = 1;
+	index = 0;
 	if (!str || ft_strlen(str) == 0 || !check_level1(str, i, col, row))
 		return (FALSE);
-	minos_total = minos_count(str);
-	if (!(mino = malloc(sizeof(char) * (TETRIMINO) + 1)))
+	if (!(minos = split_minos(str)))
 		return (FALSE);
-	while (minos_total)
+	while (minos[i])
 	{
-		mino = ft_strncpy(mino, &str[i], TETRIMINO);
-		if (!valid_pattern(mino))
+		if (!valid_pattern(minos[i]))
 			return (FALSE);
-		i += TETRIMINO + 1;
-		minos_total--;
+		i++;
 	}
-	free(mino);
+	ft_memdel((void**)minos);
 	return (TRUE);
 }
