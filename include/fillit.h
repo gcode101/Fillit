@@ -34,4 +34,6 @@ char			**split_minos(char *str);
 char			*solver(char *str, char *map, int times);
 char			*ft_concat(char *s1, char *s2);
 bool			need_space(char *str, int count);
+bool			insert(char *mino, char *map, int pos, char c);
+int				erase(char *map, char c);
 #endif
