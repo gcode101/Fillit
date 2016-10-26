@@ -29,7 +29,7 @@ int		main(int argc, char **argv)
 	{
 		map = mapit(str, FALSE, times);
 		ft_putendl("Waiting for reply...");
-		map = solver(str, map, times)
+		map = solver(str, map, times);
 		ft_putendl(map);
 	}
 	else
