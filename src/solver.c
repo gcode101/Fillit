@@ -12,22 +12,15 @@
 
 #include "fillit.h"
 
-char		*solver(char *str, char *map, int times)
+static void	insert_minos(char *str, char *map, char c, int start)
 {
-	int		i;
-	int 	start;
+	int 	i;
 	int 	end;
-	int 	count;
-	char 	c;
 	char	**minos;
 
 	i = 0;
-	start = 0;
 	end = ft_strlen(map);
-	c = 'A';
-	count = minos_count(str);
 	minos = split_minos(str);
-	ft_putendl("Waiting for reply....");
 	while (minos[i])
 	{
 		if (insert(minos[i], map, start, c))
@@ -42,10 +35,23 @@ char		*solver(char *str, char *map, int times)
 		{
 			i--;
 			if (i == -1)
-				break;
+				break ;
 			start = erase(map, --c);
 		}
-	}
+	}	
+}
+
+char		*solver(char *str, char *map, int times)
+{
+	int 	start;
+	int 	count;
+	char 	c;
+
+	start = 0;
+	c = 'A';
+	count = minos_count(str);
+	ft_putendl("Waiting for reply....");
+	insert_minos(str, map, c, start);
 	if (need_space(map, count))
 	{
 		times++;

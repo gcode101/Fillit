@@ -27,7 +27,6 @@ int		main(int argc, char **argv)
 	str = ft_rdfile(argv[1]);
 	if (ft_valid(str))
 	{
-		// ft_putendl("valid");
 		map = mapit(str, FALSE, times);
 		ft_putendl(solver(str, map, times));
 	}
