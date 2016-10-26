@@ -6,16 +6,16 @@
 /*   By: gcortina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/26 15:13:25 by gcortina          #+#    #+#             */
-/*   Updated: 2016/10/26 15:13:27 by gcortina         ###   ########.fr       */
+/*   Updated: 2016/10/26 16:40:11 by hehuang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <fillit.h>
 
-static int 	map_size(char *map)
+static int	map_size(char *map)
 {
-	int 	i;
-	int 	ct;
+	int		i;
+	int		ct;
 
 	i = 0;
 	ct = 0;
@@ -30,11 +30,11 @@ static int 	map_size(char *map)
 
 static int	next_piece(char *str, char *map, int i)
 {
-	int 	map_len;
-	int 	times;
-	int 	next;
-	int 	perfect_sq;
-	int 	j;
+	int		map_len;
+	int		times;
+	int		next;
+	int		perfect_sq;
+	int		j;
 
 	j = 5;
 	next = 1;
@@ -54,10 +54,17 @@ static int	next_piece(char *str, char *map, int i)
 	return (next);
 }
 
+static bool	block_checker(int blocks)
+{
+	if (blocks == 4)
+		return (TRUE);
+	return (FALSE);
+}
+
 bool		insert(char *mino, char *map, int pos, char c)
 {
-	int 	i;
-	int 	blocks;
+	int		i;
+	int		blocks;
 
 	i = 0;
 	blocks = 0;
@@ -79,8 +86,5 @@ bool		insert(char *mino, char *map, int pos, char c)
 		}
 		i++;
 	}
-	if (blocks == 4)
-		return (TRUE);
-	else
-		return (FALSE);
+	return (block_checker(blocks));
 }
