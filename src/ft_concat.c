@@ -6,7 +6,7 @@
 /*   By: gcortina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/28 16:02:56 by gcortina          #+#    #+#             */
-/*   Updated: 2016/10/09 21:28:18 by gcortina         ###   ########.fr       */
+/*   Updated: 2016/10/26 16:44:56 by hehuang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_concat(char *s1, char *s2)
 {
-	char *result;
+	char	*result;
 
 	result = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (result)

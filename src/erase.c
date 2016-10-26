@@ -6,7 +6,7 @@
 /*   By: gcortina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/26 15:44:08 by gcortina          #+#    #+#             */
-/*   Updated: 2016/10/26 15:44:10 by gcortina         ###   ########.fr       */
+/*   Updated: 2016/10/26 16:42:50 by hehuang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int		erase(char *map, char c)
 {
-	int 	i;
-	int 	blocks;
-	int 	pos;
+	int		i;
+	int		blocks;
+	int		pos;
 	bool	is_off;
 
 	i = 0;
