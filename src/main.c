@@ -28,7 +28,9 @@ int		main(int argc, char **argv)
 	if (ft_valid(str))
 	{
 		map = mapit(str, FALSE, times);
-		ft_putendl(solver(str, map, times));
+		ft_putendl("Waiting for reply...");
+		map = solver(str, map, times)
+		ft_putendl(map);
 	}
 	else
 		ft_putendl("not valid");

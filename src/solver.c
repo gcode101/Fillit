@@ -50,7 +50,6 @@ char		*solver(char *str, char *map, int times)
 	start = 0;
 	c = 'A';
 	count = minos_count(str);
-	ft_putendl("Waiting for reply....");
 	insert_minos(str, map, c, start);
 	if (need_space(map, count))
 	{
@@ -59,6 +58,5 @@ char		*solver(char *str, char *map, int times)
 		map = mapit(str, TRUE, times);
 		map = solver(str, map, times);
 	}
-	ft_putendl("Done");
 	return (map);
 }
