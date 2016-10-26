@@ -6,7 +6,7 @@
 /*   By: gcortina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/19 09:18:45 by gcortina          #+#    #+#             */
-/*   Updated: 2016/10/20 15:08:15 by gcortina         ###   ########.fr       */
+/*   Updated: 2016/10/26 16:17:41 by gcortina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static void	insert_minos(char *str, char *map, char c, int start)
 {
-	int 	i;
-	int 	end;
+	int		i;
+	int		end;
 	char	**minos;
 
 	i = 0;
@@ -38,14 +38,14 @@ static void	insert_minos(char *str, char *map, char c, int start)
 				break ;
 			start = erase(map, --c);
 		}
-	}	
+	}
 }
 
 char		*solver(char *str, char *map, int times)
 {
-	int 	start;
-	int 	count;
-	char 	c;
+	int		start;
+	int		count;
+	char	c;
 
 	start = 0;
 	c = 'A';
