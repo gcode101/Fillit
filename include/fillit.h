@@ -6,7 +6,7 @@
 /*   By: gcortina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/09 12:01:48 by gcortina          #+#    #+#             */
-/*   Updated: 2016/10/09 14:39:00 by gcortina         ###   ########.fr       */
+/*   Updated: 2016/10/26 17:08:08 by hehuang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,14 @@
 # include <fcntl.h>
 # include <sys/types.h>
 # include <sys/uio.h>
+# include <stdbool.h>
 # include "libft.h"
 # define BUF_SIZE 4096
-# define TRUE 1
-# define FALSE 0
 # define TETRIMINO 20
 
-typedef int		bool;
 char			*ft_rdfile(char *file);
 bool			ft_valid(char *str);
-char 			*fetch_mino(int nb);
+char			*fetch_mino(int nb);
 int				minos_count(char *str);
 char			*mapit(char *str, bool more_space, int times);
 char			**split_minos(char *str);
