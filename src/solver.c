@@ -55,7 +55,7 @@ char		*solver(char *str, char *map, int times)
 	{
 		times++;
 		ft_memdel((void**)&map);
-		map = mapit(str, TRUE, times);
+		map = mapit(str, true, times);
 		map = solver(str, map, times);
 	}
 	return (map);

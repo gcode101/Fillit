@@ -22,7 +22,7 @@ int		erase(char *map, char c)
 	i = 0;
 	blocks = 0;
 	pos = 0;
-	is_off = TRUE;
+	is_off = true;
 	while (map[i] && blocks < 4)
 	{
 		if (map[i] == c)
@@ -33,7 +33,7 @@ int		erase(char *map, char c)
 		if (blocks && is_off)
 		{
 			pos = i + 1;
-			is_off = FALSE;
+			is_off = false;
 		}
 		i++;
 	}

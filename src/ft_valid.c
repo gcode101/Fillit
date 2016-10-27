@@ -17,12 +17,12 @@ static bool		check_level1(char *str, int i, int col, int row)
 	while (str[i])
 	{
 		if (str[i] != '.' && str[i] != '#' && str[i] != '\n')
-			return (FALSE);
+			return (false);
 		if (str[i] == '\n')
 		{
 			if (col != 4 || ((str[i + 1] == '\n' ||
 					str[i + 1] == '\0') && row > 4))
-				return (FALSE);
+				return (false);
 			if (str[i + 1] != '\n')
 			{
 				col = 0;
@@ -31,13 +31,13 @@ static bool		check_level1(char *str, int i, int col, int row)
 			if (str[i + 1] == '\n')
 				row = 0;
 			if (str[i + 1] == '\n' && str[i + 2] == '\n')
-				return (FALSE);
+				return (false);
 		}
 		else
 			col++;
 		i++;
 	}
-	return (TRUE);
+	return (true);
 }
 
 static bool		valid_pattern(char *mino)
@@ -58,10 +58,10 @@ static bool		valid_pattern(char *mino)
 	while (pattern)
 	{
 		if (ft_strcmp(mino, fetch_mino(pattern)) == 0)
-			return (TRUE);
+			return (true);
 		pattern--;
 	}
-	return (FALSE);
+	return (false);
 }
 
 bool			ft_valid(char *str)
@@ -77,15 +77,15 @@ bool			ft_valid(char *str)
 	row = 1;
 	index = 0;
 	if (!str || ft_strlen(str) == 0 || !check_level1(str, i, col, row))
-		return (FALSE);
+		return (false);
 	if (!(minos = split_minos(str)))
-		return (FALSE);
+		return (false);
 	while (minos[i])
 	{
 		if (!valid_pattern(minos[i]))
-			return (FALSE);
+			return (false);
 		i++;
 	}
 	ft_memdel((void**)minos);
-	return (TRUE);
+	return (true);
 }

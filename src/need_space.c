@@ -26,6 +26,6 @@ bool	need_space(char *str, int count)
 		i++;
 	}
 	if (pieces)
-		return (TRUE);
-	return (FALSE);
+		return (true);
+	return (false);
 }

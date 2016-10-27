@@ -57,8 +57,8 @@ static int	next_piece(char *str, char *map, int i)
 static bool	block_checker(int blocks)
 {
 	if (blocks == 4)
-		return (TRUE);
-	return (FALSE);
+		return (true);
+	return (false);
 }
 
 bool		insert(char *mino, char *map, int pos, char c)
@@ -81,7 +81,7 @@ bool		insert(char *mino, char *map, int pos, char c)
 			else
 			{
 				erase(map, c);
-				return (FALSE);
+				return (false);
 			}
 		}
 		i++;

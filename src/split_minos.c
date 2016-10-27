@@ -15,8 +15,8 @@
 bool	still_in_mino(char *str, int i)
 {
 	if ((str[i] == '\n' && str[i + 1] == '\n') || str[i] == '\0')
-		return (FALSE);
-	return (TRUE);
+		return (false);
+	return (true);
 }
 
 char	**split_minos(char *str)
