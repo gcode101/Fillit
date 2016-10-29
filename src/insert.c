@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <fillit.h>
+#include "fillit.h"
 
 static int	map_size(char *map)
 {
@@ -51,6 +51,8 @@ static int	next_piece(char *str, char *map, int i)
 	}
 	if (next > 1)
 		next += times;
+	if (map_len < TETRIMINO)
+		next = check_next(map, next);
 	return (next);
 }
 

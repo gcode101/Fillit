@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdel.c                                        :+:      :+:    :+:   */
+/*   check_next.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcortina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/10/05 12:45:43 by gcortina          #+#    #+#             */
-/*   Updated: 2016/10/05 12:45:45 by gcortina         ###   ########.fr       */
+/*   Created: 2016/10/27 14:11:08 by gcortina          #+#    #+#             */
+/*   Updated: 2016/10/27 14:11:10 by gcortina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "fillit.h"
 
-void	ft_lstdel(t_list **alst, void (*del)(void*, size_t))
+int		check_next(char *map, int next)
 {
-	t_list *temp;
+	int		map_len;
 
-	temp = *alst;
-	if (temp && del)
-	{
-		while (temp)
-		{
-			del(temp->content, temp->content_size);
-			free(temp);
-			temp = temp->next;
-		}
-		*alst = NULL;
-	}
+	map_len = ft_strlen(map);
+	if (map_len == 5 && next > 1)
+		next -= 2;
+	else if (map_len == 11 && next > 1)
+		next -= 1;
+	return (next);
 }

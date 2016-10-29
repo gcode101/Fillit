@@ -31,10 +31,10 @@ char	*ft_rdfile(char *file)
 			str = ft_concat(str, buf);
 		}
 		if (!ft_strlen(str))
-			ft_putendl_fd("Empty file", 2);
+			ft_putendl_fd("error", 2);
 	}
 	else
-		ft_putendl_fd("File not found", 2);
+		ft_putendl_fd("error", 2);
 	close(fd);
 	return (str);
 }

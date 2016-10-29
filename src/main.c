@@ -30,12 +30,11 @@ int		main(int argc, char **argv)
 		if (ft_valid(str))
 		{
 			map = mapit(str, false, times);
-			ft_putendl("Waiting for reply...");
 			map = solver(str, map, times);
 			ft_putendl(map);
 		}
 		else
-			ft_putendl("Invalid file");
+			ft_putendl("error");
 	}
 	return (0);
 }

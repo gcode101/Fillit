@@ -34,8 +34,8 @@ static int	get_space(char *str, bool more_space, int times)
 	int		i;
 	int		count;
 
-	i = 4;
-	perfect_sq = 16;
+	i = 2;
+	perfect_sq = 4;
 	count = minos_count(str);
 	if (more_space)
 		count += times;
