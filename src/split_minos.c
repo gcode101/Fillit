@@ -6,20 +6,20 @@
 /*   By: gcortina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/20 12:22:41 by gcortina          #+#    #+#             */
-/*   Updated: 2016/10/21 11:23:58 by hehuang          ###   ########.fr       */
+/*   Updated: 2016/10/29 15:54:29 by gcortina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-bool	still_in_mino(char *str, int i)
+static bool	still_in_mino(char *str, int i)
 {
 	if ((str[i] == '\n' && str[i + 1] == '\n') || str[i] == '\0')
 		return (false);
 	return (true);
 }
 
-char	**split_minos(char *str)
+char		**split_minos(char *str)
 {
 	int		i;
 	int		j;
